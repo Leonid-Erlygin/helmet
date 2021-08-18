@@ -71,5 +71,8 @@ RUN wget https://code-server.dev/install.sh && \
 # install python
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt --no-cache-dir
+RUN pip3 install kaggle==1.5.12
 
+RUN mkdir /root/.kaggle/
+COPY kaggle.json /root/.kaggle/
 WORKDIR /
